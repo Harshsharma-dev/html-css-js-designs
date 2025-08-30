@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - SubCater</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="order-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>SUB<span class="accent">CATER</span></h1>
+            </div>
+            
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Menu</a>
+                <a href="#" class="nav-link">About us</a>
+                <a href="#" class="nav-link">Contact us</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Location" aria-label="Search location">
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-clock"></i>
+                    <input type="text" placeholder="Time" aria-label="Select time">
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" placeholder="Event" aria-label="Select event">
+                </div>
+                
+                <div class="user-actions">
+                    <span class="points-badge">0 points</span>
+                    <button class="icon-btn" aria-label="Shopping cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="icon-btn" aria-label="User profile">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="store-locator">
+                <i class="fas fa-map-marker-alt"></i>
+                Nearby Store Location
+            </button>
+            
+            <nav class="sidebar-nav" aria-label="Account navigation">
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Order</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-receipt"></i>
+                    <span>Receipt</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-star"></i>
+                    <span>Points</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-users"></i>
+                    <span>Refer to Friends</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Account Settings</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-map-pin"></i>
+                    <span>Delivered Address</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Order</h2>
+                <div class="header-meta">
+                    <i class="fas fa-calendar"></i>
+                    <span id="current-date">12-07-2025</span>
+                    <span class="separator">|</span>
+                    <span id="current-time">HH : MM : SS</span>
+                </div>
+            </div>
+
+            <!-- Order Status Tabs -->
+            <div class="status-tabs" role="tablist">
+                <button class="tab-button active" role="tab" aria-selected="true" data-status="scheduled">
+                    Scheduled
+                    <span class="tab-count">2</span>
+                </button>
+                <button class="tab-button" role="tab" aria-selected="false" data-status="completed">
+                    Completed
+                    <span class="tab-count">5</span>
+                </button>
+                <button class="tab-button" role="tab" aria-selected="false" data-status="cancelled">
+                    Cancelled
+                    <span class="tab-count">1</span>
+                </button>
+                <button class="tab-button" role="tab" aria-selected="false" data-status="draft">
+                    Draft
+                    <span class="tab-count">0</span>
+                </button>
+            </div>
+
+            <!-- Orders List -->
+            <div class="orders-container" role="tabpanel">
+                <!-- Active/Scheduled Orders -->
+                <div class="order-card active">
+                    <div class="order-header">
+                        <div class="order-main-info">
+                            <h3 class="order-id">Order #YH689H</h3>
+                            <div class="order-meta">
+                                <span class="order-date">
+                                    <i class="fas fa-calendar"></i>
+                                    12-07-2025, 2:30pm
+                                </span>
+                                <span class="order-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Boston, MA
+                                </span>
+                                <span class="order-event">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Birthday Party
+                                </span>
+                            </div>
+                        </div>
+                        <div class="order-status preparing">
+                            <i class="fas fa-clock"></i>
+                            Preparing
+                        </div>
+                    </div>
+                    
+                    <div class="order-content">
+                        <div class="order-items">
+                            <div class="item-preview">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop" alt="Food item">
+                                <div class="item-details">
+                                    <h4>Deluxe Party Platter</h4>
+                                    <p>Serves 10-12 people</p>
+                                </div>
+                            </div>
+                            <div class="item-count">+3 more items</div>
+                        </div>
+                        
+                        <div class="order-tracking">
+                            <div class="tracking-steps">
+                                <div class="step completed">
+                                    <div class="step-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span>Order Placed</span>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <span>Preparing</span>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                    <span>On the Way</span>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <span>Delivered</span>
+                                </div>
+                            </div>
+                            <div class="estimated-time">
+                                <i class="fas fa-clock"></i>
+                                Estimated delivery in 45 mins
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>$156.80</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn btn-outline" onclick="viewOrderDetails('YH689H')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                            <button class="btn btn-primary" onclick="trackOrder('YH689H')">
+                                <i class="fas fa-map-marked-alt"></i>
+                                Track Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Another Scheduled Order -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-main-info">
+                            <h3 class="order-id">Order #YH690K</h3>
+                            <div class="order-meta">
+                                <span class="order-date">
+                                    <i class="fas fa-calendar"></i>
+                                    15-07-2025, 6:00pm
+                                </span>
+                                <span class="order-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Cambridge, MA
+                                </span>
+                                <span class="order-event">
+                                    <i class="fas fa-briefcase"></i>
+                                    Corporate Meeting
+                                </span>
+                            </div>
+                        </div>
+                        <div class="order-status scheduled">
+                            <i class="fas fa-calendar-check"></i>
+                            Scheduled
+                        </div>
+                    </div>
+                    
+                    <div class="order-content">
+                        <div class="order-items">
+                            <div class="item-preview">
+                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&h=100&fit=crop" alt="Food item">
+                                <div class="item-details">
+                                    <h4>Business Lunch Set</h4>
+                                    <p>20 box lunches</p>
+                                </div>
+                            </div>
+                            <div class="item-count">+2 more items</div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <strong>$285.00</strong>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn btn-outline" onclick="viewOrderDetails('YH690K')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                            <button class="btn btn-outline" onclick="modifyOrder('YH690K')">
+                                <i class="fas fa-edit"></i>
+                                Modify Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (hidden by default) -->
+            <div class="empty-state" style="display: none;">
+                <div class="empty-illustration">
+                    <img src="https://api.dicebear.com/7.x/shapes/svg?seed=hungry&backgroundColor=FFF5E6" alt="No orders">
+                </div>
+                <h3>No orders yet!</h3>
+                <p>Looks like you haven't placed any orders. Let's change that!</p>
+                <button class="btn btn-primary btn-large">
+                    <i class="fas fa-utensils"></i>
+                    Browse Menu
+                </button>
+                <div class="suggestions">
+                    <h4>Popular right now</h4>
+                    <div class="suggestion-cards">
+                        <div class="suggestion-card">
+                            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=200&h=150&fit=crop" alt="Suggestion">
+                            <span>Party Platters</span>
+                        </div>
+                        <div class="suggestion-card">
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=200&h=150&fit=crop" alt="Suggestion">
+                            <span>BBQ Special</span>
+                        </div>
+                        <div class="suggestion-card">
+                            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=150&fit=crop" alt="Suggestion">
+                            <span>Healthy Bowls</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Support Widget -->
+    <div class="support-widget">
+        <p>Need any help? Chat with us or call us at <a href="tel:2893829020">289-382-9020</a> for assistance</p>
+    </div>
+
+    <script src="order-list.js"></script>
+</body>
+</html>

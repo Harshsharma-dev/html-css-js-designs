@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - SubCater</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="order-styles.css">
+    <link rel="stylesheet" href="order-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header (Same as order list) -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>SUB<span class="accent">CATER</span></h1>
+            </div>
+            
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Menu</a>
+                <a href="#" class="nav-link">About us</a>
+                <a href="#" class="nav-link">Contact us</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Location" aria-label="Search location">
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-clock"></i>
+                    <input type="text" placeholder="Time" aria-label="Select time">
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" placeholder="Event" aria-label="Select event">
+                </div>
+                
+                <div class="user-actions">
+                    <span class="points-badge">100 points</span>
+                    <button class="icon-btn" aria-label="Shopping cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="icon-btn" aria-label="User profile">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <!-- Sidebar (Same as order list) -->
+        <aside class="sidebar">
+            <button class="store-locator">
+                <i class="fas fa-map-marker-alt"></i>
+                Nearby Store Location
+            </button>
+            
+            <nav class="sidebar-nav" aria-label="Account navigation">
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="order-list.html" class="sidebar-link active">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Order</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-receipt"></i>
+                    <span>Receipt</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-star"></i>
+                    <span>Points</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-users"></i>
+                    <span>Refer to Friends</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Account Settings</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-map-pin"></i>
+                    <span>Delivered Address</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="order-list.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Orders
+                </a>
+            </nav>
+
+            <!-- Order Header -->
+            <div class="detail-header">
+                <div class="header-left">
+                    <h2>Order #YH689H</h2>
+                    <div class="order-meta">
+                        <span class="order-date">
+                            <i class="fas fa-calendar"></i>
+                            Placed on 20 Aug 2025, 1:07pm
+                        </span>
+                        <span class="order-status preparing">
+                            <i class="fas fa-clock"></i>
+                            Preparing
+                        </span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="downloadInvoice()">
+                        <i class="fas fa-download"></i>
+                        Download Invoice
+                    </button>
+                    <button class="btn btn-primary" onclick="openLiveTracking()">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Track Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Order Content Grid -->
+            <div class="detail-grid">
+                <!-- Left Column -->
+                <div class="detail-main">
+                    <!-- Order Tracking -->
+                    <div class="detail-card">
+                        <h3 class="card-title">Order Status</h3>
+                        <div class="tracking-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Order Placed</h4>
+                                    <p>Your order has been received</p>
+                                    <span class="timeline-time">1:07 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item active">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Preparing Your Order</h4>
+                                    <p>The restaurant is preparing your food</p>
+                                    <span class="timeline-time">1:15 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Out for Delivery</h4>
+                                    <p>Your order is on the way</p>
+                                    <span class="timeline-time">Est. 1:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Delivered</h4>
+                                    <p>Enjoy your meal!</p>
+                                    <span class="timeline-time">Est. 2:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="estimated-delivery">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Estimated Delivery Time</h4>
+                                <p>25 Aug 2025, 1:00 PM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items -->
+                    <div class="detail-card">
+                        <h3 class="card-title">Order Items</h3>
+                        <div class="items-list">
+                            <div class="item-card">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop" alt="Easy Order sandwich">
+                                <div class="item-info">
+                                    <h4>Easy Order sandwich</h4>
+                                    <p class="item-description">12 serves</p>
+                                    <p class="item-notes">Bread type: Remove from All Chips</p>
+                                </div>
+                                <div class="item-quantity">
+                                    <span>Qty: 1</span>
+                                </div>
+                                <div class="item-price">
+                                    <span>$101.72</span>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=100&h=100&fit=crop" alt="Classic Burger">
+                                <div class="item-info">
+                                    <h4>Classic Burger Combo</h4>
+                                    <p class="item-description">With fries and drink</p>
+                                    <p class="item-notes">Extra cheese, no onions</p>
+                                </div>
+                                <div class="item-quantity">
+                                    <span>Qty: 2</span>
+                                </div>
+                                <div class="item-price">
+                                    <span>$29.98</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Details -->
+                    <div class="detail-card">
+                        <h3 class="card-title">Delivery Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Delivery Address</h4>
+                                    <p>205A, Boston<br>Massachusetts, 02134</p>
+                                    <button class="link-btn" onclick="viewOnMap()">View on map</button>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <h4>Contact Person</h4>
+                                    <p>John Doe<br>+1 (617) 555-0123</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <h4>Event Type</h4>
+                                    <p>Birthday Party</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-truck"></i>
+                                <div>
+                                    <h4>Delivery Partner</h4>
+                                    <p>SubCater Express</p>
+                                    <button class="link-btn" onclick="contactDriver()">Contact driver</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="detail-sidebar">
+                    <!-- Bill Summary -->
+                    <div class="detail-card bill-summary">
+                        <h3 class="card-title">Bill Summary</h3>
+                        <div class="bill-items">
+                            <div class="bill-item">
+                                <span>Food & Beverages</span>
+                                <span>$131.74</span>
+                            </div>
+                            <div class="bill-item">
+                                <span>Restaurant Delivery Fees</span>
+                                <span>$10.00</span>
+                            </div>
+                            <div class="bill-item">
+                                <span>Sales Tax (7%)</span>
+                                <span>$9.22</span>
+                            </div>
+                            <div class="bill-item discount">
+                                <span>Promo Discount (SAVE10)</span>
+                                <span>-$15.00</span>
+                            </div>
+                            <div class="bill-item points">
+                                <span>Points Used</span>
+                                <span>-$7.12</span>
+                            </div>
+                        </div>
+                        <div class="bill-total">
+                            <span>Grand Total</span>
+                            <span>$128.84</span>
+                        </div>
+                        <div class="payment-info">
+                            <i class="fas fa-credit-card"></i>
+                            <div>
+                                <p>Paid via Credit Card</p>
+                                <span>•••• 4242</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="detail-card">
+                        <h3 class="card-title">Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="action-btn" onclick="reorderItems()">
+                                <i class="fas fa-redo"></i>
+                                <span>Reorder</span>
+                            </button>
+                            <button class="action-btn" onclick="getHelp()">
+                                <i class="fas fa-headset"></i>
+                                <span>Get Help</span>
+                            </button>
+                            <button class="action-btn" onclick="rateOrder()">
+                                <i class="fas fa-star"></i>
+                                <span>Rate Order</span>
+                            </button>
+                            <button class="action-btn" onclick="shareOrder()">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Points Earned -->
+                    <div class="detail-card points-card">
+                        <h3 class="card-title">Points Earned</h3>
+                        <div class="points-earned">
+                            <i class="fas fa-coins"></i>
+                            <div>
+                                <h4>+128 Points</h4>
+                                <p>Will be credited after delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Tracking Map (Hidden by default) -->
+            <div id="liveTrackingModal" class="tracking-modal" style="display: none;">
+                <div class="tracking-container">
+                    <div class="tracking-header">
+                        <h3>Live Order Tracking</h3>
+                        <button class="close-btn" onclick="closeLiveTracking()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div id="trackingMap" class="tracking-map"></div>
+                    <div class="tracking-info">
+                        <div class="driver-info">
+                            <img src="https://i.pravatar.cc/60?img=5" alt="Driver">
+                            <div>
+                                <h4>Your delivery partner</h4>
+                                <p>Michael is on the way with your order</p>
+                            </div>
+                            <button class="btn btn-outline btn-small" onclick="callDriver()">
+                                <i class="fas fa-phone"></i>
+                                Call
+                            </button>
+                        </div>
+                        <div class="delivery-eta">
+                            <i class="fas fa-clock"></i>
+                            <span>Arriving in 15-20 minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Support Widget -->
+    <div class="support-widget">
+        <p>Need any help? Chat with us or call us at <a href="tel:2893829020">289-382-9020</a> for assistance</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="order-detail.js"></script>
+</body>
+</html>
