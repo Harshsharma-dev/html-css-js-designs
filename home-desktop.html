@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubCater - Food Delivery & Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home-desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>SUB<span class="accent">CATER</span></h1>
+            </div>
+            
+            <!-- Location and Search -->
+            <div class="header-center">
+                <div class="location-selector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="location-info">
+                        <span class="location-label">Deliver to</span>
+                        <span class="location-value">Boston, MA 02134</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for restaurants, cuisines, or dishes" aria-label="Search">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- User Actions -->
+            <div class="header-actions">
+                <a href="#" class="header-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>For Business</span>
+                </a>
+                <button class="icon-btn cart-btn" id="desktopCartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" style="display: none;">0</span>
+                </button>
+                <button class="user-btn">
+                    <img src="https://i.pravatar.cc/32?img=1" alt="User">
+                    <span>John</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Delicious food,<br>delivered to your door</h1>
+                    <p>Order from thousands of restaurants and stores with fast delivery</p>
+                    
+                    <div class="service-tabs">
+                        <button class="service-tab active">
+                            <i class="fas fa-truck"></i>
+                            Delivery
+                        </button>
+                        <button class="service-tab">
+                            <i class="fas fa-shopping-bag"></i>
+                            Pickup
+                        </button>
+                        <button class="service-tab">
+                            <i class="fas fa-calendar-alt"></i>
+                            Catering
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop" alt="Food delivery">
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banners -->
+        <section class="promos-section">
+            <div class="promo-grid">
+                <div class="promo-card primary">
+                    <div class="promo-content">
+                        <h3>30% Off Your First Order</h3>
+                        <p>New customers get 30% off. Use code WELCOME30</p>
+                        <button class="promo-btn">Order Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=150&fit=crop" alt="Promo">
+                </div>
+                
+                <div class="promo-card secondary">
+                    <div class="promo-content">
+                        <h3>Free Delivery Week</h3>
+                        <p>No delivery fees on orders over $20</p>
+                        <button class="promo-btn">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="promo-card tertiary">
+                    <div class="promo-content">
+                        <h3>Earn Double Points</h3>
+                        <p>2x rewards points this weekend</p>
+                        <button class="promo-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <!-- Sidebar Categories -->
+            <aside class="categories-sidebar">
+                <h2>Categories</h2>
+                <div class="category-list">
+                    <button class="category-btn active">
+                        <i class="fas fa-utensils"></i>
+                        <span>All Restaurants</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-pizza-slice"></i>
+                        <span>Pizza</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-hamburger"></i>
+                        <span>Burgers</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-fish"></i>
+                        <span>Sushi</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-pepper-hot"></i>
+                        <span>Chinese</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-mortar-pestle"></i>
+                        <span>Indian</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-pepper-hot"></i>
+                        <span>Mexican</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-leaf"></i>
+                        <span>Healthy</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-ice-cream"></i>
+                        <span>Desserts</span>
+                    </button>
+                    <button class="category-btn">
+                        <i class="fas fa-coffee"></i>
+                        <span>Coffee & Tea</span>
+                    </button>
+                </div>
+                
+                <!-- Filters -->
+                <div class="filters-section">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span>$ (Under $15)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span>$$ ($15-$30)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>$$$ ($30-$50)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>$$$$ (Over $50)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Delivery Time</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Under 30 min</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>30-45 min</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>45-60 min</span>
+                        </label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Dietary</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Vegetarian</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Vegan</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Gluten-Free</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Halal</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Quick Reorder -->
+                <section class="quick-reorder-section">
+                    <div class="section-header">
+                        <h2>Order Again</h2>
+                        <a href="#" class="see-all">View order history</a>
+                    </div>
+                    
+                    <div class="reorder-grid">
+                        <div class="reorder-card">
+                            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=100&h=100&fit=crop" alt="Previous order">
+                            <div class="reorder-info">
+                                <h4>Chicken Burger Combo</h4>
+                                <p>Burger Hub • 2 days ago</p>
+                                <div class="reorder-footer">
+                                    <span class="price">$12.99</span>
+                                    <button class="reorder-btn">Reorder</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reorder-card">
+                            <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=100&h=100&fit=crop" alt="Previous order">
+                            <div class="reorder-info">
+                                <h4>Margherita Pizza (Large)</h4>
+                                <p>Pizza Palace • 5 days ago</p>
+                                <div class="reorder-footer">
+                                    <span class="price">$18.99</span>
+                                    <button class="reorder-btn">Reorder</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reorder-card">
+                            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=100&h=100&fit=crop" alt="Previous order">
+                            <div class="reorder-info">
+                                <h4>Salmon Sushi Set</h4>
+                                <p>Sushi Paradise • 1 week ago</p>
+                                <div class="reorder-footer">
+                                    <span class="price">$24.99</span>
+                                    <button class="reorder-btn">Reorder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Restaurant Listings -->
+                <section class="restaurants-section">
+                    <div class="section-header">
+                        <h2>All Restaurants</h2>
+                        <div class="sort-options">
+                            <span>Sort by:</span>
+                            <select class="sort-select">
+                                <option>Recommended</option>
+                                <option>Delivery Time</option>
+                                <option>Rating</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurants-grid">
+                        <!-- Restaurant Card 1 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=250&fit=crop" alt="Restaurant">
+                                <div class="restaurant-badges">
+                                    <span class="badge promo">30% OFF</span>
+                                    <span class="badge featured">FEATURED</span>
+                                </div>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>The Burger Joint</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.5 (200+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">American • Burgers • Fast Food</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 25-35 min
+                                    </span>
+                                    <span class="delivery-fee">
+                                        <i class="fas fa-truck"></i> $2.99
+                                    </span>
+                                    <span class="price-range">$$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurant Card 2 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop" alt="Restaurant">
+                                <div class="restaurant-badges">
+                                    <span class="badge new">NEW</span>
+                                </div>
+                                <button class="favorite-btn favorited">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>Sushi Paradise</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8 (500+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">Japanese • Sushi • Asian</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 30-40 min
+                                    </span>
+                                    <span class="delivery-fee free">
+                                        <i class="fas fa-truck"></i> Free
+                                    </span>
+                                    <span class="price-range">$$$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurant Card 3 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop" alt="Restaurant">
+                                <div class="restaurant-badges">
+                                    <span class="badge popular">POPULAR</span>
+                                </div>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>Pizza Palace</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.7 (1K+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">Italian • Pizza • Pasta</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 20-30 min
+                                    </span>
+                                    <span class="delivery-fee">
+                                        <i class="fas fa-truck"></i> $1.99
+                                    </span>
+                                    <span class="price-range">$$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurant Card 4 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=250&fit=crop" alt="Restaurant">
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>Thai Kitchen</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.6 (350+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">Thai • Asian • Noodles</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 35-45 min
+                                    </span>
+                                    <span class="delivery-fee">
+                                        <i class="fas fa-truck"></i> $3.99
+                                    </span>
+                                    <span class="price-range">$$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurant Card 5 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1565299715199-866c917206bb?w=400&h=250&fit=crop" alt="Restaurant">
+                                <div class="restaurant-badges">
+                                    <span class="badge eco">ECO-FRIENDLY</span>
+                                </div>
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>Fresh & Healthy</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9 (250+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">Healthy • Salads • Smoothies</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 25-35 min
+                                    </span>
+                                    <span class="delivery-fee">
+                                        <i class="fas fa-truck"></i> $2.99
+                                    </span>
+                                    <span class="price-range">$$$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurant Card 6 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image">
+                                <img src="https://images.unsplash.com/photo-1564758866811-4780aa0a1f49?w=400&h=250&fit=crop" alt="Restaurant">
+                                <button class="favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="restaurant-info">
+                                <div class="restaurant-header">
+                                    <h3>Mexican Fiesta</h3>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.4 (180+)</span>
+                                    </div>
+                                </div>
+                                <p class="cuisine">Mexican • Tacos • Latin</p>
+                                <div class="restaurant-meta">
+                                    <span class="delivery-time">
+                                        <i class="fas fa-clock"></i> 30-40 min
+                                    </span>
+                                    <span class="delivery-fee">
+                                        <i class="fas fa-truck"></i> $2.99
+                                    </span>
+                                    <span class="price-range">$$</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Load More -->
+                    <div class="load-more">
+                        <button class="load-more-btn">
+                            <i class="fas fa-spinner"></i>
+                            Load More Restaurants
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Get to Know Us</h3>
+                    <ul>
+                        <li><a href="#">About SubCater</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Let Us Help You</h3>
+                    <ul>
+                        <li><a href="#">Account Details</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>For Restaurants</h3>
+                    <ul>
+                        <li><a href="#">Partner with Us</a></li>
+                        <li><a href="#">Restaurant Dashboard</a></li>
+                        <li><a href="#">Marketing Tools</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="app-links">
+                        <h4>Download Our App</h4>
+                        <a href="#" class="app-badge">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                        </a>
+                        <a href="#" class="app-badge">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SubCater. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home-desktop.js"></script>
+</body>
+</html>

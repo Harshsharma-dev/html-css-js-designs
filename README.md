@@ -7,9 +7,12 @@ This directory contains a complete food delivery system for SubCater, including:
 ## 🚀 Quick Start
 
 ### Customer Order System (NEW)
-1. **View the Showcase**: Open `showcase.html` to see all improvements
-2. **Order List Demo**: Open `order-list.html` to see the order listing page  
-3. **Order Detail Demo**: Open `order-detail.html` to see detailed order view
+1. **Home Page (Mobile & Desktop)**: Open `home-showcase.html` to see both versions side-by-side
+2. **Mobile Home**: Open `home-mobile.html` for mobile experience
+3. **Desktop Home**: Open `home-desktop.html` for desktop experience
+4. **Order List**: Open `order-list.html` to see the order listing page  
+5. **Order Detail**: Open `order-detail.html` to see detailed order view
+6. **Full Showcase**: Open `showcase.html` to see all improvements
 
 ### Delivery Partner Dashboard
 - Open `delivery-dashboard.html` to see the delivery driver interface
@@ -21,6 +24,33 @@ This directory contains a complete food delivery system for SubCater, including:
 A complete reimagining of the customer-facing order management experience with modern UX patterns, accessibility, and mobile-first design.
 
 ## 🎯 Key Improvements
+
+### Mobile Home Page (`home-mobile.html`) - NEW!
+- **Personalized greeting** - Welcome message with user's name
+- **Smart location selector** - Easy switching between saved addresses
+- **Universal search** - Search restaurants, cuisines, or specific dishes
+- **Service switcher** - Toggle between Delivery, Pickup, and Catering
+- **Promotional carousel** - Auto-rotating offers and discounts
+- **Quick reorder** - One-tap reorder from previous orders
+- **Visual categories** - 8 main cuisine categories with custom icons
+- **Restaurant cards** - Rich cards with ratings, delivery time, and promotions
+- **Popular items** - Trending dishes with quick add to cart
+- **Floating cart** - Persistent cart button with real-time updates
+- **Bottom navigation** - iOS/Android standard navigation pattern
+- **Pull to refresh** - Native mobile gesture support
+- **PWA ready** - Installable as a mobile app
+
+### Desktop Home Page (`home-desktop.html`) - NEW!
+- **Top navigation** - Traditional header with integrated search
+- **Advanced sidebar** - Category navigation with multi-level filters
+- **Grid layout** - 3-column restaurant grid with rich cards
+- **Hover interactions** - Desktop-optimized with hover states
+- **Filter system** - Price, delivery time, and dietary filters
+- **Promotional banners** - Eye-catching hero and promo sections
+- **Quick reorder grid** - Easy access to previous orders
+- **Sort options** - Multiple sorting criteria
+- **Load more** - Pagination for restaurant listings
+- **Footer navigation** - Comprehensive site links
 
 ### Order List Page (`order-list.html`)
 - **Tab-based filtering** - Scheduled, Completed, Cancelled, Draft orders
@@ -45,6 +75,17 @@ A complete reimagining of the customer-facing order management experience with m
 
 ## 📁 New Files Created
 
+### Customer Home Pages
+- `home-mobile.html` - Mobile-first home page
+- `home-mobile.css` - Mobile-optimized styles  
+- `home-mobile.js` - Mobile interactive functionality
+- `home-desktop.html` - Desktop home page with advanced features
+- `home-desktop.css` - Desktop styles with hover states
+- `home-desktop.js` - Desktop functionality and filters
+- `home-showcase.html` - Side-by-side comparison of both versions
+- `mobile-showcase.html` - Mobile preview in device frame
+
+### Order Management System
 - `order-list.html` - Enhanced order listing page
 - `order-detail.html` - Comprehensive order detail view  
 - `order-styles.css` - Shared design system

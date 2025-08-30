@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SubCater - Food Delivery & Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#FF9800">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="location-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="location-info">
+                    <span class="location-label">Deliver to</span>
+                    <span class="location-value">Boston, MA 02134</span>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn offers-btn">
+                    <i class="fas fa-tag"></i>
+                    <span class="offers-badge">3</span>
+                </button>
+                <button class="header-btn profile-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">
+                Hi John, <span class="emoji">👋</span><br>
+                What would you like today?
+            </h1>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for restaurants, cuisines, or dishes" aria-label="Search">
+                    <button class="filter-btn" aria-label="Filters">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Service Options -->
+            <div class="service-options">
+                <button class="service-btn active">
+                    <i class="fas fa-truck"></i>
+                    <span>Delivery</span>
+                </button>
+                <button class="service-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Pickup</span>
+                </button>
+                <button class="service-btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Catering</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Promotional Banner -->
+        <section class="promo-section">
+            <div class="promo-carousel">
+                <div class="promo-slide active">
+                    <div class="promo-content">
+                        <h3>30% Off Your First Order</h3>
+                        <p>Use code WELCOME30</p>
+                        <button class="promo-btn">Order Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=200&fit=crop" alt="Promo">
+                </div>
+                <div class="promo-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reorder -->
+        <section class="quick-reorder-section">
+            <div class="section-header">
+                <h2>Order Again</h2>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            <div class="reorder-scroll">
+                <div class="reorder-card">
+                    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=120&h=120&fit=crop" alt="Previous order">
+                    <div class="reorder-info">
+                        <h4>Chicken Burger</h4>
+                        <p>Burger Hub</p>
+                        <span class="reorder-price">$12.99</span>
+                    </div>
+                    <button class="reorder-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="reorder-card">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=120&h=120&fit=crop" alt="Previous order">
+                    <div class="reorder-info">
+                        <h4>Margherita Pizza</h4>
+                        <p>Pizza Palace</p>
+                        <span class="reorder-price">$18.99</span>
+                    </div>
+                    <button class="reorder-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <h2 class="section-title">What's on your mind?</h2>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=pizza&backgroundColor=FFF5E6" alt="Pizza">
+                    </div>
+                    <span>Pizza</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=burger&backgroundColor=FFF5E6" alt="Burgers">
+                    </div>
+                    <span>Burgers</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=sushi&backgroundColor=FFF5E6" alt="Sushi">
+                    </div>
+                    <span>Sushi</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=chinese&backgroundColor=FFF5E6" alt="Chinese">
+                    </div>
+                    <span>Chinese</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=indian&backgroundColor=FFF5E6" alt="Indian">
+                    </div>
+                    <span>Indian</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=mexican&backgroundColor=FFF5E6" alt="Mexican">
+                    </div>
+                    <span>Mexican</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=healthy&backgroundColor=FFF5E6" alt="Healthy">
+                    </div>
+                    <span>Healthy</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <img src="https://api.dicebear.com/7.x/icons/svg?seed=dessert&backgroundColor=FFF5E6" alt="Desserts">
+                    </div>
+                    <span>Desserts</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Restaurants -->
+        <section class="restaurants-section">
+            <div class="section-header">
+                <h2>Top restaurants near you</h2>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <div class="restaurants-list">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=250&fit=crop" alt="Restaurant">
+                        <div class="restaurant-badge promo">30% OFF</div>
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>25-35 min</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>The Burger Joint</h3>
+                        <div class="restaurant-meta">
+                            <span class="cuisine">American • Burgers • Fast Food</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                                <span class="reviews">(200+)</span>
+                            </div>
+                        </div>
+                        <div class="restaurant-details">
+                            <span class="price-range">$$</span>
+                            <span class="dot">•</span>
+                            <span class="delivery-fee">$2.99 delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop" alt="Restaurant">
+                        <div class="restaurant-badge new">NEW</div>
+                        <button class="favorite-btn favorited">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <div class="delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>30-40 min</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Sushi Paradise</h3>
+                        <div class="restaurant-meta">
+                            <span class="cuisine">Japanese • Sushi • Asian</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                                <span class="reviews">(500+)</span>
+                            </div>
+                        </div>
+                        <div class="restaurant-details">
+                            <span class="price-range">$$$</span>
+                            <span class="dot">•</span>
+                            <span class="delivery-fee">Free delivery</span>
+                            <span class="min-order">• Min $25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop" alt="Restaurant">
+                        <div class="restaurant-badge popular">POPULAR</div>
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>20-30 min</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Pizza Palace</h3>
+                        <div class="restaurant-meta">
+                            <span class="cuisine">Italian • Pizza • Pasta</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                                <span class="reviews">(1K+)</span>
+                            </div>
+                        </div>
+                        <div class="restaurant-details">
+                            <span class="price-range">$$</span>
+                            <span class="dot">•</span>
+                            <span class="delivery-fee">$1.99 delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Items -->
+        <section class="popular-section">
+            <div class="section-header">
+                <h2>Popular right now</h2>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <div class="popular-scroll">
+                <div class="popular-card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop" alt="Popular item">
+                    <div class="popular-info">
+                        <h4>Caesar Salad</h4>
+                        <p>Fresh Greens</p>
+                        <div class="popular-footer">
+                            <span class="price">$8.99</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="popular-card">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=150&h=150&fit=crop" alt="Popular item">
+                    <div class="popular-info">
+                        <h4>Power Bowl</h4>
+                        <p>Healthy Eats</p>
+                        <div class="popular-footer">
+                            <span class="price">$12.99</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="popular-card">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&h=150&fit=crop" alt="Popular item">
+                    <div class="popular-info">
+                        <h4>BBQ Wings</h4>
+                        <p>Wing Stop</p>
+                        <div class="popular-footer">
+                            <span class="price">$10.99</span>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Events Section -->
+        <section class="events-section">
+            <div class="events-banner">
+                <div class="events-content">
+                    <h2>Planning an event?</h2>
+                    <p>We cater to all occasions</p>
+                    <button class="events-btn">Explore Catering</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=200&h=150&fit=crop" alt="Catering">
+            </div>
+        </section>
+
+        <!-- Spacing for bottom nav -->
+        <div class="bottom-spacing"></div>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart" id="cartButton" style="display: none;">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">2</span>
+        <span class="cart-total">$31.98</span>
+    </button>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="order-list.html" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Orders</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </nav>
+
+    <!-- Location Modal -->
+    <div class="modal" id="locationModal" style="display: none;">
+        <div class="modal-content location-modal">
+            <div class="modal-header">
+                <h3>Select delivery location</h3>
+                <button class="close-modal" onclick="closeLocationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="location-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for area, street name...">
+                </div>
+                
+                <button class="current-location-btn">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>Use current location</span>
+                </button>
+                
+                <div class="saved-locations">
+                    <h4>Saved Addresses</h4>
+                    <div class="location-item">
+                        <i class="fas fa-home"></i>
+                        <div class="location-details">
+                            <span class="location-type">Home</span>
+                            <span class="location-address">205A, Boston, MA 02134</span>
+                        </div>
+                        <i class="fas fa-check selected"></i>
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div class="location-details">
+                            <span class="location-type">Work</span>
+                            <span class="location-address">100 Summer St, Boston, MA 02110</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="add-address-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add new address</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="home-mobile.js"></script>
+</body>
+</html>

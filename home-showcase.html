@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubCater Home Page - Mobile & Desktop Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .showcase-header {
+            background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .showcase-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .showcase-header p {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .device-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .device-btn {
+            padding: 0.75rem 2rem;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .device-btn:hover {
+            background: white;
+            color: #FF9800;
+            transform: translateY(-2px);
+        }
+        
+        .device-btn.active {
+            background: white;
+            color: #FF9800;
+        }
+        
+        .showcase-content {
+            padding: 3rem 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .device-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Mobile Device */
+        .mobile-device {
+            flex-shrink: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .mobile-device.hidden {
+            transform: translateX(-100%);
+            opacity: 0;
+            display: none;
+        }
+        
+        .iphone-container {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .iphone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+        
+        .iphone-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Desktop Device */
+        .desktop-device {
+            flex: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .desktop-device.hidden {
+            transform: scale(0.9);
+            opacity: 0;
+            display: none;
+        }
+        
+        .macbook-container {
+            position: relative;
+            background: #e8e8e8;
+            border-radius: 8px 8px 0 0;
+            padding: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        .macbook-screen {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 800px;
+        }
+        
+        .macbook-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .macbook-base {
+            height: 20px;
+            background: linear-gradient(to bottom, #d1d1d1 0%, #a8a8a8 100%);
+            border-radius: 0 0 4px 4px;
+            position: relative;
+        }
+        
+        .macbook-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            background: #999;
+            border-radius: 0 0 3px 3px;
+        }
+        
+        /* Features Grid */
+        .features-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .features-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .features-header p {
+            font-size: 1.25rem;
+            color: #666;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .feature-card:hover {
+            border-color: #FF9800;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255,152,0,0.2);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #FF9800;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        
+        .comparison-table th {
+            background: #FF9800;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:hover {
+            background: #FFF5E6;
+        }
+        
+        .check {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #FF9800;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background: #F57C00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,152,0,0.3);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid #FF9800;
+            color: #FF9800;
+        }
+        
+        .cta-btn.secondary:hover {
+            background: #FF9800;
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .device-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .desktop-device {
+                width: 100%;
+                max-width: 900px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .showcase-header h1 {
+                font-size: 2rem;
+            }
+            
+            .showcase-header p {
+                font-size: 1.125rem;
+            }
+            
+            .features-header h2 {
+                font-size: 2rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .iphone-container {
+                transform: scale(0.85);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="showcase-header">
+        <h1>SubCater Home Page</h1>
+        <p>Experience our beautiful, responsive design across all devices</p>
+        
+        <div class="device-selector">
+            <button class="device-btn active" onclick="showDevice('both')">
+                <i class="fas fa-th"></i> Both Views
+            </button>
+            <button class="device-btn" onclick="showDevice('mobile')">
+                <i class="fas fa-mobile-alt"></i> Mobile Only
+            </button>
+            <button class="device-btn" onclick="showDevice('desktop')">
+                <i class="fas fa-desktop"></i> Desktop Only
+            </button>
+        </div>
+    </header>
+    
+    <div class="showcase-content">
+        <div class="device-container">
+            <!-- Mobile Device -->
+            <div class="mobile-device" id="mobileDevice">
+                <div class="iphone-container">
+                    <div class="iphone-screen">
+                        <div class="iphone-notch"></div>
+                        <iframe src="home-mobile.html" title="Mobile Home Page"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Device -->
+            <div class="desktop-device" id="desktopDevice">
+                <div class="macbook-container">
+                    <div class="macbook-screen">
+                        <iframe src="home-desktop.html" title="Desktop Home Page"></iframe>
+                    </div>
+                    <div class="macbook-base">
+                        <div class="macbook-notch"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-header">
+                <h2>Unified Design System</h2>
+                <p>Consistent experience across all platforms with platform-specific optimizations</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile-First Approach</h3>
+                    <p>Bottom navigation, touch gestures, and thumb-friendly design for seamless mobile experience</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Desktop Excellence</h3>
+                    <p>Advanced filtering sidebar, hover states, and multi-column layout for power users</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Smart Search</h3>
+                    <p>Universal search across restaurants, cuisines, and dishes with intelligent suggestions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-filter"></i>
+                    <h3>Advanced Filters</h3>
+                    <p>Price range, delivery time, dietary preferences, and more to find exactly what you want</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Personalization</h3>
+                    <p>Save favorites, quick reorder, and personalized recommendations based on order history</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Service Flexibility</h3>
+                    <p>Seamlessly switch between delivery, pickup, and catering modes</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Platform-Specific Features</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Mobile</th>
+                        <th>Desktop</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Navigation</strong></td>
+                        <td>Bottom tabs for easy thumb access</td>
+                        <td>Top header with search integration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Categories</strong></td>
+                        <td>4x2 grid with swipe gestures</td>
+                        <td>Vertical sidebar with instant filtering</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Restaurant Display</strong></td>
+                        <td>Full-width cards with vertical scroll</td>
+                        <td>3-column grid with hover effects</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Search</strong></td>
+                        <td>Expandable search with filter button</td>
+                        <td>Always visible with advanced options</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cart</strong></td>
+                        <td>Floating button with item count</td>
+                        <td>Header button with dropdown preview</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interactions</strong></td>
+                        <td>Touch optimized with haptic feedback</td>
+                        <td>Hover states and keyboard shortcuts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <div class="cta-section">
+            <h2 style="margin-bottom: 1rem;">Ready to explore more?</h2>
+            <p style="margin-bottom: 2rem; color: #666;">Check out our complete food delivery system</p>
+            <div class="cta-buttons">
+                <a href="home-mobile.html" class="cta-btn" target="_blank">
+                    <i class="fas fa-mobile-alt"></i> Open Mobile Version
+                </a>
+                <a href="home-desktop.html" class="cta-btn" target="_blank">
+                    <i class="fas fa-desktop"></i> Open Desktop Version
+                </a>
+                <a href="showcase.html" class="cta-btn secondary">
+                    <i class="fas fa-th"></i> View All Pages
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showDevice(device) {
+            const mobileDevice = document.getElementById('mobileDevice');
+            const desktopDevice = document.getElementById('desktopDevice');
+            const buttons = document.querySelectorAll('.device-btn');
+            
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide devices
+            switch(device) {
+                case 'mobile':
+                    mobileDevice.classList.remove('hidden');
+                    desktopDevice.classList.add('hidden');
+                    break;
+                case 'desktop':
+                    mobileDevice.classList.add('hidden');
+                    desktopDevice.classList.remove('hidden');
+                    break;
+                case 'both':
+                default:
+                    mobileDevice.classList.remove('hidden');
+                    desktopDevice.classList.remove('hidden');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
