@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Menu - SubCater Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="menu-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pull to Refresh -->
+    <div class="pull-to-refresh" id="pullToRefresh">
+        <div class="ptr-content">
+            <i class="fas fa-sync-alt"></i>
+            <span>Pull to refresh</span>
+        </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-top">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="restaurant-info">
+                <h1>The Burger Joint</h1>
+                <div class="restaurant-meta">
+                    <i class="fas fa-star"></i>
+                    <span>4.5</span>
+                    <span class="dot">•</span>
+                    <span>25-35 min</span>
+                    <span class="dot">•</span>
+                    <span>$2.99</span>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button class="search-btn" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="info-btn" onclick="showInfo()">
+                    <i class="fas fa-info-circle"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-container" id="searchContainer" style="display: none;">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search menu..." id="searchInput" autocomplete="off">
+                <button class="clear-search" onclick="clearSearch()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Pills -->
+    <div class="category-pills" id="categoryPills">
+        <div class="pills-container">
+            <button class="pill active" data-category="bundles">
+                <i class="fas fa-box"></i>
+                Bundles
+            </button>
+            <button class="pill" data-category="platters">
+                <i class="fas fa-concierge-bell"></i>
+                Platters
+            </button>
+            <button class="pill" data-category="sides">
+                <i class="fas fa-bacon"></i>
+                Sides
+            </button>
+            <button class="pill" data-category="desserts">
+                <i class="fas fa-ice-cream"></i>
+                Desserts
+            </button>
+            <button class="pill" data-category="box-meal">
+                <i class="fas fa-cube"></i>
+                Box Meal
+            </button>
+            <button class="pill" data-category="beverages">
+                <i class="fas fa-coffee"></i>
+                Beverages
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="menu-content" id="menuContent">
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <div class="promo-icon">
+                <i class="fas fa-percentage"></i>
+            </div>
+            <div class="promo-text">
+                <strong>Limited Offer</strong>
+                <span>20% off on bundles</span>
+            </div>
+            <span class="promo-code">BUNDLE20</span>
+        </div>
+
+        <!-- Bundles Section -->
+        <section class="menu-section" id="bundles">
+            <h2 class="section-title">Bundles</h2>
+            
+            <!-- Bundle Item 1 -->
+            <div class="menu-item" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=150&h=150&fit=crop" alt="Family Bundle">
+                    <div class="badge bestseller">Bestseller</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Family Bundle</h3>
+                    <p class="item-desc">4 Burgers, 4 Fries, 4 Drinks</p>
+                    <div class="item-tags">
+                        <span class="tag">Serves 4</span>
+                        <span class="tag save">Save $8</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$45.99</span>
+                            <span class="old-price">$53.99</span>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bundle Item 2 -->
+            <div class="menu-item" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=150&h=150&fit=crop" alt="Party Bundle">
+                    <div class="badge new">New</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Party Bundle</h3>
+                    <p class="item-desc">8 Burgers, 8 Fries, 8 Drinks, 2 Desserts</p>
+                    <div class="item-tags">
+                        <span class="tag">Serves 8</span>
+                        <span class="tag save">Save $15</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$89.99</span>
+                            <span class="old-price">$104.99</span>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platters Section -->
+        <section class="menu-section" id="platters">
+            <h2 class="section-title">Platters</h2>
+            
+            <!-- Platter Item 1 -->
+            <div class="menu-item customizable" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&h=150&fit=crop" alt="BBQ Wings">
+                    <div class="dietary-badge halal">Halal</div>
+                    <button class="favorite-btn favorited" onclick="toggleFavorite(event, this)">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>BBQ Wings Platter</h3>
+                    <p class="item-desc">24 pieces with ranch dip</p>
+                    <div class="item-tags">
+                        <span class="tag">Serves 6-8</span>
+                        <span class="tag spicy">Mild</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$32.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.7
+                            </div>
+                        </div>
+                        <button class="customize-btn" onclick="openCustomization(event, this)">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platter Item 2 -->
+            <div class="menu-item" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1565299715199-866c917206bb?w=150&h=150&fit=crop" alt="Veggie Platter">
+                    <div class="dietary-badge veg">Veg</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Garden Fresh Platter</h3>
+                    <p class="item-desc">Fresh vegetables with hummus</p>
+                    <div class="item-tags">
+                        <span class="tag">Serves 4-6</span>
+                        <span class="tag healthy">Healthy</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$24.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.6
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sides Section -->
+        <section class="menu-section" id="sides">
+            <h2 class="section-title">Sides</h2>
+            
+            <!-- Side Item with Size Options -->
+            <div class="menu-item with-sizes" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=150&h=150&fit=crop" alt="French Fries">
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Crispy French Fries</h3>
+                    <p class="item-desc">Golden fries with seasoning</p>
+                    <div class="size-options" onclick="event.stopPropagation()">
+                        <button class="size-btn active" data-price="4.99">S</button>
+                        <button class="size-btn" data-price="6.99">M</button>
+                        <button class="size-btn" data-price="8.99">L</button>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$4.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.5
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Item 2 -->
+            <div class="menu-item" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=150&h=150&fit=crop" alt="Onion Rings">
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Onion Rings</h3>
+                    <p class="item-desc">Crispy rings with aioli</p>
+                    <div class="item-tags">
+                        <span class="tag">6 pieces</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$5.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.4
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section class="menu-section" id="desserts">
+            <h2 class="section-title">Desserts</h2>
+            
+            <!-- Dessert Item 1 -->
+            <div class="menu-item" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=150&h=150&fit=crop" alt="Chocolate Cake">
+                    <div class="badge special">Chef's Special</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Triple Chocolate Cake</h3>
+                    <p class="item-desc">Rich chocolate with ganache</p>
+                    <div class="item-tags">
+                        <span class="tag">1 slice</span>
+                        <span class="tag warning">Contains nuts</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$7.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.9
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="quickAdd(event, this)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Box Meal Section -->
+        <section class="menu-section" id="box-meal">
+            <h2 class="section-title">Box Meal</h2>
+            
+            <!-- Box Meal Item -->
+            <div class="menu-item customizable" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=150&h=150&fit=crop" alt="Burger Box">
+                    <div class="badge value">Best Value</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Classic Burger Box</h3>
+                    <p class="item-desc">Burger + Fries + Drink + Cookie</p>
+                    <div class="item-tags">
+                        <span class="tag">Complete meal</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$12.99</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                4.7
+                            </div>
+                        </div>
+                        <button class="customize-btn" onclick="openCustomization(event, this)">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages Section -->
+        <section class="menu-section" id="beverages">
+            <h2 class="section-title">Bottled Beverages</h2>
+            
+            <!-- Beverage with Quantity -->
+            <div class="menu-item with-quantity" onclick="selectItem(this)">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=150&h=150&fit=crop" alt="Coca Cola">
+                    <button class="favorite-btn" onclick="toggleFavorite(event, this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="item-content">
+                    <h3>Coca Cola</h3>
+                    <p class="item-desc">500ml bottle</p>
+                    <div class="item-tags">
+                        <span class="tag">Served cold</span>
+                    </div>
+                    <div class="item-footer">
+                        <div class="price-info">
+                            <span class="price">$2.99</span>
+                        </div>
+                        <div class="quantity-controls" onclick="event.stopPropagation()">
+                            <button class="qty-btn" onclick="decreaseQty(this)">−</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floatingCart" style="display: none;">
+        <div class="cart-content" onclick="viewCart()">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-badge">2</span>
+            </div>
+            <div class="cart-info">
+                <span class="cart-items">2 items</span>
+                <span class="cart-total">$25.98</span>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <!-- Bottom Sheet for Customization -->
+    <div class="bottom-sheet" id="customizationSheet">
+        <div class="sheet-overlay" onclick="closeCustomization()"></div>
+        <div class="sheet-content">
+            <div class="sheet-header">
+                <div class="sheet-handle"></div>
+                <h3>Customize Your Order</h3>
+                <button class="close-sheet" onclick="closeCustomization()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="sheet-body">
+                <!-- Product Info -->
+                <div class="product-preview">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=80&h=80&fit=crop" alt="Item">
+                    <div class="product-info">
+                        <h4>Classic Burger Box</h4>
+                        <p>Customize your meal</p>
+                    </div>
+                </div>
+                
+                <!-- Customization Options -->
+                <div class="customize-section">
+                    <h4>Choose Your Burger</h4>
+                    <div class="radio-options">
+                        <label class="radio-option">
+                            <input type="radio" name="burger" value="beef" checked>
+                            <div class="option-content">
+                                <span>Classic Beef</span>
+                                <span class="option-price">+$0</span>
+                            </div>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="burger" value="chicken">
+                            <div class="option-content">
+                                <span>Grilled Chicken</span>
+                                <span class="option-price">+$1</span>
+                            </div>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="burger" value="veggie">
+                            <div class="option-content">
+                                <span>Veggie Patty</span>
+                                <span class="option-price">+$0</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="customize-section">
+                    <h4>Add Extras</h4>
+                    <div class="checkbox-options">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extras" value="cheese">
+                            <div class="option-content">
+                                <span>Extra Cheese</span>
+                                <span class="option-price">+$1.50</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extras" value="bacon">
+                            <div class="option-content">
+                                <span>Bacon</span>
+                                <span class="option-price">+$2.00</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="customize-section">
+                    <h4>Special Instructions</h4>
+                    <textarea placeholder="Any special requests?" rows="3"></textarea>
+                </div>
+            </div>
+            
+            <div class="sheet-footer">
+                <div class="total-section">
+                    <span>Total</span>
+                    <strong class="total-price">$12.99</strong>
+                </div>
+                <button class="add-to-cart-btn" onclick="addCustomizedItem()">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span class="toast-message">Item added to cart</span>
+    </div>
+
+    <script src="menu-mobile.js"></script>
+</body>
+</html>
